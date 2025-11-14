@@ -1,0 +1,67 @@
+Last login: Tue Nov 11 23:09:09 on console
+(base) mathrusrikuna@mathrusris-MacBook-Air ~ % node -v
+v24.11.0
+(base) mathrusrikuna@mathrusris-MacBook-Air ~ % npm -v
+11.6.1
+(base) mathrusrikuna@mathrusris-MacBook-Air ~ % cd DEVOPS_INTERNAL
+cd: no such file or directory: DEVOPS_INTERNAL
+(base) mathrusrikuna@mathrusris-MacBook-Air ~ % cd DEVOPS_INTERNAL;
+cd: no such file or directory: DEVOPS_INTERNAL
+(base) mathrusrikuna@mathrusris-MacBook-Air ~ % cd ~/Desktop/Devops_internal
+(base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % npm init -y
+
+Wrote to /Users/mathrusrikuna/Desktop/DEVOPS_internal/package.json:
+
+{
+  "name": "devops_internal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
+
+
+
+(base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % ls -la 
+total 8
+drwxr-xr-x   3 mathrusrikuna  staff    96 Nov 14 19:09 .
+drwx------@ 47 mathrusrikuna  staff  1504 Nov 14 18:55 ..
+-rw-r--r--   1 mathrusrikuna  staff   251 Nov 14 19:09 package.json
+(base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % npm install express
+
+
+added 68 packages, and audited 69 packages in 2s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+(base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % nano server.js
+
+(base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % code .
+
+zsh: command not found: code
+(base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % code .
+
+zsh: command not found: code
+(base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % curl --version
+
+curl 8.5.0 (arm64-apple-darwin20.0.0) libcurl/8.5.0 OpenSSL/3.5.4 zlib/1.2.13 libssh2/1.10.0 nghttp2/1.57.0
+Release-Date: 2023-12-06
+Protocols: dict file ftp ftps gopher gophers http https imap imaps mqtt pop3 pop3s rtsp scp sftp smb smbs smtp smtps telnet tftp
+Features: alt-svc AsynchDNS GSS-API HSTS HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz NTLM SPNEGO SSL threadsafe TLS-SRP UnixSockets
+(base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % curl http://localhost:3000/students
+
+[{"id":1,"name":"John","marks":85},{"id":2,"name":"Sara","marks":90}]%          (base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % curl -X POST http://localhost:3000/students -H "Content-Type: application/json" -d '{"name":"Meena","marks":95}'
+
+{"id":3,"name":"Meena","marks":95}%                                             (base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % curl -X PATCH http://localhost:3000/students/1 -H "Content-Type: application/json" -d '{"marks":99}'
+
+{"id":1,"name":"John","marks":99}%                                              (base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % curl -X DELETE http://localhost:3000/students/2
+
+{"message":"Student deleted"}%                                                  (base) mathrusrikuna@mathrusris-MacBook-Air Devops_internal % 
